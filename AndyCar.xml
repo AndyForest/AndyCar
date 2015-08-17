@@ -1,5 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_if" id="368" inline="false" x="139" y="-32">
+    <mutation else="1"></mutation>
     <value name="IF0">
       <block type="logic_compare" id="381" inline="true">
         <field name="OP">GT</field>
@@ -16,40 +17,10 @@
       </block>
     </value>
     <statement name="DO0">
-      <block type="controls_repeat" id="342" inline="true">
-        <value name="TIMES">
-          <block type="math_number" id="349">
-            <field name="NUM">133</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="oled_cleardisplay" id="241">
-            <next>
-              <block type="oled_setcursor" id="299" inline="true">
-                <value name="STARTX">
-                  <block type="math_number" id="319">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <value name="STARTY">
-                  <block type="math_number" id="326">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="oled_drawnumber" id="290" inline="true">
-                    <value name="NUMBER">
-                      <block type="sensor_spectrometer" id="232">
-                        <field name="LIGHT">RED</field>
-                      </block>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
+      <block type="movement_stop" id="421"></block>
+    </statement>
+    <statement name="ELSE">
+      <block type="movement_forward" id="442"></block>
     </statement>
   </block>
 </xml>
