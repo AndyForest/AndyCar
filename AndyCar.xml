@@ -1,27 +1,36 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="241" x="96" y="183">
-    <next>
-      <block type="oled_setcursor" id="299" inline="true">
-        <value name="STARTX">
-          <block type="math_number" id="319">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="STARTY">
-          <block type="math_number" id="326">
-            <field name="NUM">0</field>
-          </block>
-        </value>
+  <block type="controls_repeat" id="342" inline="true" x="-78" y="146">
+    <value name="TIMES">
+      <block type="math_number" id="349">
+        <field name="NUM">25</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="oled_cleardisplay" id="241">
         <next>
-          <block type="oled_drawnumber" id="290" inline="true">
-            <value name="NUMBER">
-              <block type="sensor_spectrometer" id="232">
-                <field name="LIGHT">RED</field>
+          <block type="oled_setcursor" id="299" inline="true">
+            <value name="STARTX">
+              <block type="math_number" id="319">
+                <field name="NUM">0</field>
               </block>
             </value>
+            <value name="STARTY">
+              <block type="math_number" id="326">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="oled_drawnumber" id="290" inline="true">
+                <value name="NUMBER">
+                  <block type="sensor_spectrometer" id="232">
+                    <field name="LIGHT">RED</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </next>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>
