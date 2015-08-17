@@ -1,26 +1,35 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_if" id="368" inline="false" x="139" y="-32">
-    <mutation else="1"></mutation>
-    <value name="IF0">
-      <block type="logic_compare" id="381" inline="true">
-        <field name="OP">GT</field>
-        <value name="A">
-          <block type="sensor_spectrometer" id="408">
-            <field name="LIGHT">RED</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="395">
-            <field name="NUM">90</field>
-          </block>
-        </value>
+  <block type="controls_repeat" id="456" inline="true" x="98" y="-72">
+    <value name="TIMES">
+      <block type="math_number" id="463">
+        <field name="NUM">100000</field>
       </block>
     </value>
-    <statement name="DO0">
-      <block type="movement_stop" id="421"></block>
-    </statement>
-    <statement name="ELSE">
-      <block type="movement_forward" id="442"></block>
+    <statement name="DO">
+      <block type="controls_if" id="368" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="381" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="408">
+                <field name="LIGHT">RED</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="395">
+                <field name="NUM">90</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_stop" id="421"></block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_forward" id="442"></block>
+        </statement>
+      </block>
     </statement>
   </block>
 </xml>
